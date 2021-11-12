@@ -62,21 +62,29 @@ def test_route(domain, profile):
             "path": path
             },
         "group_keys": {
-            k: { "hostname": h} for k, h in host_keys.items()
             },
         "series": [],
         }
 
+    if len(host_keys) == 1:
+        has_keys = False
+        payload["group"]["hostname"] = list(host_keys.values())[0]
+    else:
+        has_keys = True
+        for k, h in host_keys.items():
+            payload["group_keys"][k] = { "hostname": h}
 
     for key, hostname in host_keys.items():
         host_data = data.all_hosts[hostname]
         host_ser = host_data[path]
         for s in host_ser:
             if tstart <= s.timestamp <= tend:
-                payload["series"].append(
-                    { "ts": s.timestamp, "key": key, "value": s.value} )
+                v = { "ts": s.timestamp, "value": s.value}
+                if has_keys:
+                    v["key"] = key
+                payload["series"].append(v)
 
-    payload["series"].sort(key=lambda s: (s["ts"], s["key"]))
+    payload["series"].sort(key=lambda s: (s["ts"], s.get("key")))
 
     superframe["content"].append(payload)
     return jsonify(superframe)
