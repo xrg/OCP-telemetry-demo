@@ -90,4 +90,51 @@ def test_route(domain, profile):
     return jsonify(superframe)
 
 
+@app.route("/telemetry/<domain>/<path:profile>/dimensions")
+def test_cfg(domain, profile):
+    """Configuration query: this demonstrates retrieving static cfg.
+    """
+
+    if domain != "CSMv1":
+        abort(404)
+
+    app.logger.info("Getting data for %s under %s", domain, profile)
+    if profile != "some/hosts":
+        abort(403)
+
+    now = round(time.time(), 2)
+    superframe = {
+        "domain": "CSMv1",
+        "root_profile": profile + '/dimensions',  # TBD!
+        "time_base": now,
+        "content": []
+        }
+
+    payload = {
+        "group": {
+            "key": "hostname"
+            },
+        "group_keys": {
+            },
+        "series": [
+            {"ts": now, "hostname": h}
+            for h in data.all_hosts
+            ],
+        }
+    superframe["content"].append(payload)
+
+    payload = {
+        "group": {
+            "key": "path",
+            },
+        "series": [
+            {"ts": now, "path": m.path}
+            for m in data.meters_def
+            ]
+        }
+    superframe["content"].append(payload)
+
+    return jsonify(superframe)
+
+
 data.data_startup()
