@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import time
 from threading import Thread
-from typing import Any, NamedTuple, Type
+from typing import Any, NamedTuple, Type, Union
 from random import SystemRandom
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 rnd = SystemRandom()
 
 class Sample(NamedTuple):
-    timestamp: int
+    timestamp: Union[int, float]
     value: Any
 
 class FloatSample(Sample):
@@ -21,7 +21,7 @@ class FloatSample(Sample):
 
     @classmethod
     def sample(cls, tcur:float):
-        return cls(timestamp=tcur, value=rnd.random())
+        return cls(timestamp=tcur, value=round(rnd.random(), 5))
 
 
 class Meter(NamedTuple):
@@ -80,7 +80,7 @@ class DataThread(Thread):
     def run(self):
         global all_hosts
         logger.info("initializing data")
-        tcur = time.time() - 100
+        tcur = round(time.time() - 100, 3)
 
         self._init_hosts()
         try:
