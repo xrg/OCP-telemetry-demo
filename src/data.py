@@ -20,8 +20,9 @@ class FloatSample(Sample):
     value: float
 
     @classmethod
-    def sample(cls, tcur:float):
-        return cls(timestamp=tcur, value=round(rnd.random(), 5))
+    def sample(cls, tcur:float, vmin: float, vmax: float):
+        value = (rnd.random() * (vmax - vmin)) + vmin
+        return cls(timestamp=tcur, value=round(value, 5))
 
 
 class Meter(NamedTuple):
@@ -30,6 +31,8 @@ class Meter(NamedTuple):
     path: str
     sample_cls: Type[Sample]
     update_sec: float = 1.0
+    vmin: float = 0.0
+    vmax: float = 1.0
 
 
 class SampleGen:
@@ -42,7 +45,8 @@ class SampleGen:
     def tick(self, tcur: float):
         """Creates one sample, adds to series, returns next timestamp
         """
-        self._tseries.append(self._meter.sample_cls.sample(tcur))
+        m = self._meter
+        self._tseries.append(m.sample_cls.sample(tcur, m.vmin, m.vmax))
         if self._meter.update_sec > 0.0:
             self.tnext = tcur + self._meter.update_sec
         else:
@@ -52,7 +56,7 @@ class SampleGen:
 all_hosts = {}
 
 meters_def = [
-    Meter(path="/power/watts", sample_cls=FloatSample),
+    Meter(path="/power/watts", sample_cls=FloatSample, vmin=5.0, vmax=400.0),
     ]
 
 class DataThread(Thread):
