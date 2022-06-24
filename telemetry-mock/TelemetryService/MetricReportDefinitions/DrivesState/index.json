@@ -1,0 +1,45 @@
+{
+    "@odata.type": "#MetricReportDefinition.v1_4_1.MetricReportDefinition",
+    "Id": "DrivesState",
+    "Name": "State of existing drives",
+    "MetricReportDefinitionType": "Periodic",
+    "MetricReportDefinitionEnabled": true,
+    "Schedule": {
+        "RecurrenceInterval": "PT1H"
+    },
+    "ReportActions": [
+        "RedfishEvent",
+        "LogToMetricReportsCollection"
+    ],
+    "ReportUpdates": "AppendWrapsWhenFull",
+    "AppendLimit": 256,
+    "MetricReport": {
+        "@odata.id": "/redfish/v1/TelemetryService/MetricReports/DrivesState"
+    },
+    "Status": {
+        "State": "Enabled"
+    },
+    "Wildcards": [
+        {
+            "Name": "DriveId",
+            "Values": [
+                "0"
+            ]
+        }
+    ],
+    "Metrics": [
+        {
+            "MetricId": "Health",
+            "MetricProperties": [
+                "/redfish/v1/ComponentAggregator/Drives/{DriveId}#/Status/Health"
+            ],
+            "CollectionFunction": "Max",
+            "CollectionTimeScope": "Interval",
+            "CollectionDuration": "PT0.02S"
+        }
+    ],
+    "Links": {
+        "Triggers": []
+    },
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/DrivesState"
+}

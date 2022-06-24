@@ -1,0 +1,30 @@
+{
+    "@odata.type": "#MetricReport.v1_4_2.MetricReport",
+    "Id": "DrivesState",
+    "Name": "Average Platform Power Usage metric report",
+    "ReportSequence": "127",
+    "MetricReportDefinition": {
+        "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/DrivesState"
+    },
+    "MetricValues": [
+        {
+            "MetricId": "Health",
+            "MetricValue": "OK",
+            "Timestamp": "2016-11-08T12:25:00-05:00",
+            "MetricProperty": "/redfish/v1/ComponentAggregator/Drives/Iomega-RX34HR109#/Status/Health"
+        },
+        {
+            "MetricId": "Health",
+            "MetricValue": "Bad",
+            "Timestamp": "2016-11-08T13:25:00-05:00",
+            "MetricProperty": "/redfish/v1/ComponentAggregator/Drives/Iomega-RX34HR109#/Status/Health"
+        },
+        {
+            "MetricId": "Health",
+            "MetricValue": "Bad",
+            "Timestamp": "2016-11-08T14:25:00-05:00",
+            "MetricProperty": "/redfish/v1/ComponentAggregator/Drives/Iomega-RX34HR109#/Status/Health"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReports/DrivesState",
+}

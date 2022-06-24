@@ -1,0 +1,12 @@
+{
+    "@odata.type": "#MetricReportDefinitionCollection.MetricReportDefinitionCollection",
+    "Name": "MetricReportDefinitions",
+    "Members@odata.count": 5,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/DrivesState"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions",
+    "@Redfish.Copyright": "Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
+}
