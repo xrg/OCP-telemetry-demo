@@ -1,0 +1,11 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/GraphicsControllers",
+    "@odata.type": "#ComponentServiceGraphicsController.v0_0_1.GraphicsControllers",
+    "Name": "GraphicsControllers collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {}
+    ],
+    "Members!link": "GraphicsController",
+    "Members!description": "Enumeration of all graphics controllers. Should NOT be fully populated w/o OData query"
+}

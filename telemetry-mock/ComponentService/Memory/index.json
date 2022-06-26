@@ -1,0 +1,11 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/Memory",
+    "@odata.type": "#ComponentServiceMemory.v0_0_1.Memory",
+    "Name": "Memory collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {"@odata.id": "/redfish/v1/ComponentService/Memory/ACME.DDR4x64G.RM1230AE20"}
+    ],
+    "Members!link": "Memory",
+    "Members!description": "Enumeration of all memory devices (modules). Should NOT be fully populated w/o OData query"
+}

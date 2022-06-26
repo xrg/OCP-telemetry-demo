@@ -1,0 +1,10 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/ProcessorByGroup('x86_64')",
+    "@odata.type": "#ComponentServiceProcessor.v0_0_1.ProcessorsByGroup",
+    "Name": "Processors collection",
+    "Members@odata.count": 1,
+    "Members": [
+    ],
+    "Members!link": "Processor",
+    "Members!description": "Dynamic grouping of processors. Members are Processors, as well. This may be redirected to or even be a transparent alias for `Processors`."
+}

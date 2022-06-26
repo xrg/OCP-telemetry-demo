@@ -1,0 +1,20 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/Drives/ACME-RX34HR109",
+    "@odata.type": "#Drive.v1_13_0.Drive",
+    "Name": "Hard Disk",
+    "Model": "IoHD3400",
+    "Revision": "S20A",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    } ,
+    "CapacityBytes": 340000000,
+    "Manufacturer": "ACME",
+    "SerialNumber": "RX34HR109",
+    "PartNumber": "IO036292GJA00",
+    "Links": {
+        "Origin": {
+            "@odata.id": "/redfish/v1/Chassis/DC24.05.123022.s4/Drives/s4"
+        }
+    }
+}

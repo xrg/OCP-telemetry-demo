@@ -1,0 +1,29 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService",
+    "@odata.type": "#ComponentService.v0_0_1.ComponentService",
+    "Name": "Compnent Aggregator root",
+    "Processors": {
+        "@odata.id": "/redfish/v1/ComponentService/Processors"
+    },
+    "Drives": {
+        "@odata.id": "/redfish/v1/ComponentService/Drives"
+    },
+    "Memory": {
+        "@odata.id": "/redfish/v1/ComponentService/Memory"
+    },
+    "GraphicsControllers": {
+        "@odata.id": "/redfish/v1/ComponentService/GraphicsControllers"
+    },
+    "NetworkAdapters": {
+        "@odata.id": "/redfish/v1/ComponentService/NetworkAdapters"
+    },
+    "MediaControllers": {
+        "@odata.id": "/redfish/v1/ComponentService/MediaControllers"
+    },
+    "PowerSubsystems": {
+        "@odata.id": "/redfish/v1/ComponentService/PowerSubsystems"
+    },
+    "ThermalSubsystems": {
+        "@odata.id": "/redfish/v1/ComponentService/ThermalSubsystems"
+    }
+}

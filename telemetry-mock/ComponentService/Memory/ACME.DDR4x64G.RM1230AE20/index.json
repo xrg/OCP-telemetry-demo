@@ -1,0 +1,30 @@
+ {
+    "@odata.id": "/redfish/v1/ComponentService/Memory/ACME.DDR4x64G.RM1230AE20",
+    "@odata.type": "#Memory.v1_14_0.Memory",
+    "Name": "Regular Memory",
+    "RankCount": 2,
+    "MaxTDPMilliWatts": [
+        12000
+    ],
+    "CapacityMiB": 65536,
+    "DataWidthBits": 64,
+    "BusWidthBits": 72,
+    "ErrorCorrection": "MultiBitECC",
+    "MemoryLocation": {
+        "Socket": 1,
+        "MemoryController": 1,
+        "Channel": 1,
+        "Slot": 1
+    },
+    "MemoryType": "DRAM",
+    "MemoryDeviceType": "DDR4",
+    "BaseModuleType": "RDIMM",
+    "MemoryMedia": [
+        "DRAM"
+    ],
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    }
+
+}

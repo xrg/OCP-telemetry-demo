@@ -1,0 +1,11 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/Drives",
+    "@odata.type": "#ComponentServiceDrives.v0_0_1.Drives",
+    "Name": "Drives collection",
+    "Members@odata.count": 1,
+    "Members": [
+        { "@odata.id": "/redfish/v1/ComponentService/Drives/ACME-RX34HR109"}
+    ],
+    "Members!link": "Drive",
+    "Members!description": "Enumeration of all available/addressable drives. Should NOT be fully populated w/o OData query"
+}

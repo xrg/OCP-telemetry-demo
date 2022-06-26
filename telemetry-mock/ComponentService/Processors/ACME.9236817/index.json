@@ -1,0 +1,10 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/Processors/ACME.9236817",
+    "@odata.type": "#Processor.v1_13_0.Processor",
+    "Name": "CPU1",
+    "Links": {
+        "Origin": {
+            "@odata.id": "/redfish/v1/Systems/9370AD018/Processors/CPU3"
+        }
+    }
+}

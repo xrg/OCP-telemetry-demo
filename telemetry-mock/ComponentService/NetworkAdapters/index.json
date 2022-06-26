@@ -1,0 +1,11 @@
+{
+    "@odata.id": "/redfish/v1/ComponentService/NetworkAdapters",
+    "@odata.type": "#ComponentServiceNetworkAdapter.v0_0_1.NetworkAdapters",
+    "Name": "NetworkAdapters collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {}
+    ],
+    "Members!link": "NetworkAdapter",
+    "Members!description": "Enumeration of all network adapters. Should NOT be fully populated w/o OData query"
+}

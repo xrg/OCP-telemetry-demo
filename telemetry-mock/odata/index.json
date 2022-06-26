@@ -17,6 +17,11 @@
             "url": "/redfish/v1/Chassis"
         },
         {
+            "name": "ComponentService",
+            "kind": "Singleton",
+            "url": "/redfish/v1/ComponentService"
+        },
+        {
             "name": "Managers",
             "kind": "Singleton",
             "url": "/redfish/v1/Managers"
