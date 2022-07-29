@@ -1,0 +1,11 @@
+{
+    "@odata.id": "/redfish/v1/ProfileService",
+    "@odata.type": "#ProfileService.v0_0_0.ProfileService",
+    "Name": "Profile Service",
+    "Members@odata.count": 1,
+    "Members": [
+        {"@odata.id": "/redfish/v1/ProfileService/laffer"}
+    ],
+    "Members!link": "Profile",
+    "Members!description": "External entities access profiles"
+}

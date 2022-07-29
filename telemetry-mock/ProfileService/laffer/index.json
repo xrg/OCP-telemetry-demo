@@ -1,0 +1,26 @@
+{
+    "@odata.id": "/redfish/v1/ProfileService/laffer",
+    "@odata.type": "#ProfileService.v0_0_0.Profile",
+    "Name": "Barry Laffer",
+    "Description": "Access provided to Barry Laffer Corp. for memory debugging",
+    "ResourcesAllowed": [
+        {
+            "@odata.id": "/redfish/v1/ComponentService/Memory",
+            "Mapping": "Direct|Hash",
+            "Mapping!description": "Whether the identifiers under this resource are exposed as they are",
+            "Filter": "Manufacturer eq 'Laffer Corp.'",
+            "DetailedProperties": [
+                { "Field": "CapacityMiB" },
+                { "Field": "Name"}
+            ]
+        }
+    ],
+    "MetricReportsAllowed": [
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReports/DrivesState"
+        }
+    ],
+    "Status": "Approved",
+    "LastUsed": "...",
+    "ExpiresAt": "..."
+}
